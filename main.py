@@ -101,7 +101,8 @@ if __name__ == "__main__":
     model = ollamaLLM()
     userInput = ""
 
-    print("You can make questions about UNO, Texas Hold'em, or TBOI Four Souls.")
+    print("You can make questions about the document you introduced.")
+    print("If you want to use more documents, restart the app after.")
     print("Exit by typing 'exit'.")
     while userInput != "exit":
         userInput = input("> ")

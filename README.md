@@ -6,6 +6,9 @@ Langchain-RAG is a Python project that demonstrates a Retrieval-Augmented Genera
 
 - Python 3.13 or higher
 - The dependencies listed in `requirements.txt`
+- Ollama installed with
+  - `nomic-embed-text`
+  - `llama3.2`
 
 ## Installation
 
@@ -33,13 +36,15 @@ Langchain-RAG is a Python project that demonstrates a Retrieval-Augmented Genera
 
 1. Place your PDF documents into a new ```./pdfs/``` directory.
 
-2. Run the main script:
+2. Run `ollama serve` in a terminal if Ollama is not running already
+
+3. Run the main script:
 
     ```sh
     python main.py
     ```
 
-3. Follow the prompts to ask questions about the content of your PDF documents. You can make questions about the PDF documents you used earlier. Type `exit` to quit.
+4. Follow the prompts to ask questions about the content of your PDF documents. You can make questions about the PDF documents you used earlier. Type `exit` to quit.
 
 ## Project Structure
 
