@@ -104,8 +104,10 @@ if __name__ == "__main__":
     print("You can make questions about the document you introduced.")
     print("If you want to use more documents, restart the app after.")
     print("Exit by typing 'exit'.")
-    while userInput != "exit":
+    while True:
         userInput = input("> ")
+        if userInput == "exit":
+            break
         context, sources = searchDBForQueryContext(userInput, db)
         prompt = formatPrompt(context, userInput)
         response = model.invoke(prompt)
