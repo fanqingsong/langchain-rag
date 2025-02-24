@@ -24,12 +24,23 @@ Langchain-RAG is a Python project that demonstrates a Retrieval-Augmented Genera
     ```sh
     python -m venv env
     source env/bin/activate
+
+
+    uv venv --python=python3.9
+    source .venv/bin/activate
+
+    uv python install 3.10
+    uv venv --python=python3.10
     ```
 
 3. Install the required packages:
 
     ```sh
     pip install -r requirements.txt
+
+    uv pip install -r requirements.txt 
+
+    uv pip install -i "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple" -r requirements.txt
     ```
 
 ## Usage
