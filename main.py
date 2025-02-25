@@ -1,3 +1,17 @@
+
+from dotenv import load_dotenv
+import os, time
+
+load_dotenv()
+
+print("----------- SILICONFLOWAI_API_KEY ---------------")
+print(os.environ['SILICONFLOWAI_API_KEY'])
+
+
+SILICONFLOWAI_API_KEY = os.environ['SILICONFLOWAI_API_KEY']
+
+
+
 # Variables
 DOCUMENTS_PATH = "./pdfs"
 CHROMA_PATH = "./chroma"
@@ -113,7 +127,7 @@ class SiliconFlowEmbeddings(Embeddings):
             "encoding_format": "float"
         }
         headers = {
-            "Authorization": "Bearer sk-lnslzrriteyazhaiirvvuawzgtsfsflpdhuxphqkfzacppdz",
+            "Authorization": f"Bearer {SILICONFLOWAI_API_KEY}",
             "Content-Type": "application/json"
         }
 
@@ -223,7 +237,7 @@ if __name__ == "__main__":
 
     model = ChatOpenAI(
         openai_api_base="https://api.siliconflow.cn/v1", # 硅基流动的url
-        openai_api_key="sk-lnslzrriteyazhaiirvvuawzgtsfsflpdhuxphqkfzacppdz",	# 自己的api-key
+        openai_api_key=SILICONFLOWAI_API_KEY,	# 自己的api-key
         model = "Qwen/Qwen2.5-7B-Instruct"  # 启用模型
     )
     userInput = ""
@@ -240,3 +254,8 @@ if __name__ == "__main__":
         response = model.invoke(prompt)
         print(response)
         print("Sources:" + str(sources))
+
+    print("Goodbye!")
+
+
+    
